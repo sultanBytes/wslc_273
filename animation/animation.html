@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Animatio</title>
+	<style type="text/css">
+		body{
+
+			background-color: black;
+		}
+		main{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			margin: auto;
+			animation-name: ram;
+			animation-duration: 7s;
+			border-radius: 50%;
+		}
+		@keyframes ram{
+			0%{
+				background-color: green;
+				transform: translate(0px,0px);
+			}
+			25%{
+				background-color: green;
+				transform: translate(400px,00px);
+				/*border-radius: 50%;*/
+			}
+			50%{
+				background-color: yellow;
+				transform: translate(400px,400px);
+				border-radius: 10%;
+
+			}
+			75%{
+				background-color: cyan;
+				transform: translate(0px,400px);
+			}
+			100%{
+				background-color: gray;
+				transform: translate(0px,0px);
+			}
+			
+			
+
+		}
+		
+	</style>
+</head>
+<body>
+	<main>
+		
+	</main>
+</body>
+</html>

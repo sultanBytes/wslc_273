@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.main{
+			width: 100%;
+			height: 100vh;
+			background: skyblue;
+			position: relative;
+			animation: sky 5s 0s linear infinite;
+			overflow: hidden;
+		}
+		.sun{
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			background: yellow;
+			position: absolute;
+			left: 50%;
+			top: 0;
+			transform: translateX(-50%);
+			animation: sun 5s 0s linear infinite;
+		}
+		@keyframes sun{
+			50%{
+				top: 100%;
+				background: red;
+			}
+			100%{
+				top: 0;
+				background: yellow;
+			}
+
+		} 
+		@keyframes sky{
+			50%{
+				background: black;
+			}
+			100%{
+				background: skyblue;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="sun"></div>
+	</div>
+
+</body>
+</html>

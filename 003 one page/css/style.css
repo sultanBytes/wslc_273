@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: sans-serif;
+}
+
+body{
+    background-image: url(../images/waves_.jpg);
+    background-size: cover;
+}
+
+.wrapper{
+    width: 1000px;
+    margin: auto;
+}
+
+.header{
+    background-image: url(../images/headerbg.jpg);
+    background-size: cover;
+    border-bottom: 8px solid #0083CE;
+}
+
+.header-overlay{
+    background-image: url(../images/gridtile.png);
+    padding: 20px 0;
+}
+
+.logo{
+    width: 300px;
+    margin: auto;
+}
+
+.logo img{
+    width: 100%;
+}
+
+.header-middle{
+    width: 400px;
+    margin:100px auto;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid cyan;
+    border-bottom: 1px solid cyan;
+}
+
+.header-middle h1{
+    font-weight: 100;
+    font-size: 35px;
+
+}
+
+.nav a{
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.nav ul{
+    display: flex;
+    justify-content: center;
+}
+
+.nav ul li{
+    border-right: 2px solid white;
+    padding: 15px 30px;
+}
+
+.nav ul li:last-child{
+    border: none;
+}
+
+.home-banner{
+    background-image: url(../images/3.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.overlay{
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    padding: 130px 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.overlay div{
+    border: 8px solid white;
+    display: inline;
+    padding: 4px 8px;
+}
+
+
+.home-content{
+    height: 500px;
+}

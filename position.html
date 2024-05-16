@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		div:nth-of-type(even){
+			height: 100px;
+			background: red;
+			border: 1px solid black;
+		}
+
+		div:nth-child(odd){
+			height: 100px;
+			background: yellow;
+			border: 1px solid black;
+		}
+
+		.thisd{
+			background: green !important;
+			width: 50%;
+			position: absolute;
+			bottom: 0;
+		}
+
+		body{
+			position: relative;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div class="thisd">hello</div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>
+
+<!-- position -->
+
+<!-- fixed 
+	nature - inline-block
+	scroll - none
+	area - no occu
+	perspective - window
+	uses - (social icons, back to top, chat bot, pop up)
+sticky
+	does not work until you describe position
+	perspective - window
+	uses - (header)
+relative
+	nature - default
+	area - occu
+	scroll - true
+	perspective - self
+	uses - (helping absolute)
+absolute
+	nature - inline-block
+	area - no occu
+	scroll - true
+	perspective - (default : window, if parent have a position)
+	uses - (rest whole web page)
+static(default) 
+
+
+
+	top
+	left
+	bottom
+	right
+-->

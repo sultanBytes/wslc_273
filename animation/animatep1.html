@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+	background-color: #2c3e50;
+	margin: 0;
+	padding: 0;
+}
+
+.b,.b2,.b3,.b4{
+	width: 10px;
+	height: 100px;
+	
+	position: absolute;
+	animation: animate 2s infinite;
+}
+
+@keyframes animate{
+	50%{
+		transform: scaleY(1.5);
+	}
+	
+}
+.b{
+ top: 50%;
+ left: 40%;
+ background-color: #e74c3c;
+ 
+}
+
+.b2{
+	top: 50%;
+	left: 45%;
+	background-color: #3498db;
+	animation-delay: 0.3s;
+}
+
+.b3{
+	top: 50%;
+	left: 50%;
+	background-color: #2ecc71;
+	animation-delay: 0.6s;
+}
+
+.b4{
+	top: 50%;
+	left:55%;
+	background-color: #f1c40f;
+	animation-delay: 0.9s;
+}
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div class="b"></div>
+        <div class="b2"></div>
+        <div class="b3"></div>
+        <div class="b4"></div>
+    </div>
+</body>
+</html>

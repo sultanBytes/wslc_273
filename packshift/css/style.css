@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root{
+    --theme-color-1:#FFCF40;
+    --theme-color-2:#035FAE;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+header{
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+header figure{
+    width: 220px;
+}
+
+img{
+    width: 100%;
+}
+
+.container{
+    max-width: 1140px;
+    margin: auto;
+}
+
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 16px;
+}
+
+header button{
+    padding: 8px 28px;
+    font-size: 25px;
+    font-weight: 800;
+    color: white;
+    border-radius: 28px 28px 0 28px;
+    border: none;
+    background-color: var(--theme-color-2);
+
+    animation: changeBgBtn 0.8s infinite;
+}
+
+@keyframes changeBgBtn{
+    50%{
+        background-color: var(--theme-color-1);
+    }
+
+    100%{
+        background-color: var(--theme-color-2);
+    }
+}
+
+.moving-truck{
+    position: fixed;
+    bottom: 10px;
+    left: -10%;
+    animation: moveTruck 8s infinite linear;
+    width: 108px;
+}
+
+.truck-wheels{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    top: 84%;
+
+    padding: 0 6px 0 20px;
+}
+
+.truck-wheels div{
+    width: 16px;
+}
+
+.truck-wheels div img{
+    animation: rotateTruckWheels 1s infinite linear;
+}
+
+@keyframes rotateTruckWheels{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes moveTruck{
+    0%{
+        left: -10%;
+    }
+    100%{
+        left: 110%;
+    }
+}
+
+
+.contact-btns{
+    display: none;
+}
+
+.banner{
+    background-image: url('https://packshifts.in/images/banner.jpg');
+}
+
+.banner .container{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding: 50px 0 80px 0;
+    align-items: center;
+}
+
+.banner-form{
+    padding: 20px;
+    background-color: #F3F3F3;
+    border-radius: 15px;
+}
+
+.banner-form input{
+    width: 100%;
+    padding: 6px 10px;
+    margin-bottom: 15px;
+    background-color: white;
+    border: 1px solid lightgray;
+}
+
+.banner-form form > h3{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.captcha-div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.captcha-div input:last-child{
+    background-color: var(--theme-color-1);
+    border-radius: 0;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+.banner-form form > p{
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.banner-form form button{
+    width: 100%;
+    border: none;
+    background-color: var(--theme-color-2);
+    padding: 8px;
+    margin: 15px 0;
+    color: white;
+    font-size: 17px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-form form button:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-color:#C9DF4F ; */
+    top: 0;
+    left: -100%;
+    background-image: linear-gradient(160deg,#C9DF4F, #c9df4f00);
+    transition: 0.4s;
+}
+
+.banner-form form button:hover::before{
+    left: 0;
+}
+
+.banner-content > h1{
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    color: white;
+}
+
+.banner-content > h2{
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 40px;
+    color: white;
+    margin: 30px 0;
+}
+
+.banner-content > p{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 25px;
+    color: white;
+}
+
+
+.banner-content > div{
+    max-width: 320px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 30px;
+}

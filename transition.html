@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.wrapper{
+			width: 1000px;
+			height: 500px;
+			border: 1px solid;
+			position: relative;
+			margin: auto;
+		}
+
+		.in1{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			left: 0;
+			top: 20px;
+			transition: 1s linear;
+		}
+		.in2{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			position: absolute;
+			left: 0;
+			top: 120px;
+			transition: 1s ease-in;
+		}
+		.in3{
+			width: 100px;
+			height: 100px;
+			background: orange;
+			position: absolute;
+			left: 0;
+			top: 220px;
+			transition: 1s ease-out;
+		}
+
+		.in4{
+			width: 100px;
+			height: 100px;
+			background: blue;
+			position: absolute;
+			left: 0;
+			top: 320px;
+			transition: 1s ease-in-out;
+		}
+
+		.wrapper:hover div{
+			left: 900px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="in1">linear</div>
+		<div class="in2">ease-in</div>
+		<div class="in3">ease-out</div>
+		<div class="in4">ease-in-out</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+		}
+		body{
+			background: #080E24;
+		}
+
+		.solar{
+			height: 100vh;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.solar > li{
+			border-radius: 50%;
+			border: 2px solid #394060;
+			position: absolute;
+			animation: orbit 4s infinite linear;
+		}
+
+		.sun{
+			width: 50px;
+			height: 50px;
+			border: none;
+			background: #FFCC33;
+			box-shadow: 0 0 50px #FFCC33;
+		}
+
+		.murcury{
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			
+		}
+
+		.murcury div{
+			width: 12px;
+			height: 12px;
+			background: white;
+			border-radius: 50%;
+			position: absolute;
+			top: 9px;
+			left: 9px;
+
+		}
+
+		.venus{
+			width: 170px;
+			height: 170px;
+			animation-duration: 6s !important;
+		}
+
+		.venus div{
+			width: 16px;
+			height: 16px;
+			background: lightgray;
+			border-radius: 50%;
+			position: absolute;
+			top: 20px;
+			left: 14px;
+		}
+
+		.earth{
+			width: 260px;
+			height: 260px;
+			animation-duration: 7s !important;
+		}
+
+		.earth > div{
+			width: 15px;
+			height: 15px;
+			background: blue;
+			border-radius: 50%;
+			position: absolute;
+			top: 70px;
+			left: 2px;
+		}
+
+		.earth > div > div{
+			width: 30px;
+			height: 30px;
+/*			background: lightgray;*/
+			border-radius: 50%;
+/*			border: 1px solid yellow;*/
+			position: absolute;
+			top: -54%;
+			left:-60%;
+/*			transform: translate(-50%, -50%) rotate(0);*/
+			animation: moonOrbit 3s infinite linear;
+		}
+
+
+		.earth .moon{
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: lightgray;
+			position: absolute;
+			top: 0px;
+		}
+		@keyframes orbit{
+			100%{
+				transform: rotate(360deg);
+			}
+		}
+
+		@keyframes moonOrbit{
+			100%{
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<ul class="solar">
+			<li class="sun"></li>
+			<li class="murcury">
+				<div></div>
+			</li>
+			<li class="venus">
+				<div>
+					
+				</div>
+			</li>
+
+			<li class="earth">
+				<div>
+					<div>
+						<div class="moon"></div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

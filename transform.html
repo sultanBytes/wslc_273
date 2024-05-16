@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .wrapper{
+            width: 1000px;
+            display: grid;
+            grid-template-columns:repeat(4, 1fr);
+            gap: 15px;
+            border: 1px solid;
+            padding: 15px;
+            margin: auto;
+        }
+
+        .inners{
+            height: 250px;
+            background-color: red;
+            border: 1px solid yellow;
+        }
+
+        .thisDiv{
+            transition: 0.8s;
+            /* transform: scale(1); */
+
+            /* transform-origin: left; */
+            /* transform: scale(1.5); */
+
+            /* transform-origin: bottom left; */
+        }
+
+        .thisDiv:hover{
+            /* transform: rotate(360deg); */
+            /* transform: scale(2, 1) rotate(360deg); */
+            transform: skew(10deg, 20deg) rotate(360deg) scale(4);
+        }
+
+        .roateDiv{
+            margin:100px auto;
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .roateDiv img{
+            width: 100%;
+            height: 100%;
+            transition: 0.8s;
+            transform: rotate(0) scale(0);
+            border-radius: 50%;
+        }
+
+        .roateDiv:hover img{
+            transform: rotate(360deg) scale(1);
+        }
+
+        .linear{
+            width: 1000px;
+            margin: 100px auto;
+            height: 250px;
+            border: 1px salmon solid;
+            /* background-image: linear-gradient(70deg, black, Blue, yellow); */
+            font-size: 80px;
+            text-align: center;
+            font-weight: 900;
+            -webkit-text-stroke:2px black;
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="inners thisDiv">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae at nobis quibusdam tempora culpa quaerat, nostrum quam distinctio, rerum placeat iure nisi eum repellat pariatur. Nihil sint facilis nam corporis?
+        </div>
+        <div class="inners"></div>
+        <div class="inners"></div>
+        <div class="inners"></div>
+        <div class="inners"></div>
+        <div class="inners"></div>
+        <div class="inners"></div>
+        <div class="inners"></div>
+    </div>
+
+    <div class="roateDiv">
+        <img src="https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/20695836/2022/11/10/ba1724c2-c606-481c-a0ca-63424b61a8661668078028270WomensRayonPrintedEmbroideredKurtaWithPantAndDupatta1.jpg" alt="">
+    </div>
+
+    <div class="linear">
+        hello world
+    </div>
+</body>
+</html>
+ <!-- 
+transform
+   translate 
+   traslateX
+   traslateY
+
+   scale()
+   scaleY()
+   scaleX()
+
+   rotate
+
+   skew
+   skewX
+   skewY
+
+-->

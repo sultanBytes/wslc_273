@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: sans-serif;
+}
+
+.container{
+    width: 1170px;
+    margin: auto;
+}
+
+.header-top{
+    background-color: #373737;
+    color: white;
+    padding: 8px 0;
+}
+.header-top a{
+    color: inherit;
+}
+
+.header-top .container{
+    display: flex;
+    justify-content: end;
+}
+
+.header-top .container div:last-child ul{
+    display: flex;
+}
+
+.header-top .container div:last-child ul li{
+    margin: 0 12px;
+    font-size: 14px;
+}
+
+.header-top .container div:first-child{
+    font-size: 14px;
+    margin-right: 80px;
+    font-weight: 600;
+} 
+
+.header-inner{
+    background-color: white;
+}
+
+.logo{
+    width: 250px;
+}
+
+.logo img{
+    width: 100%;
+}
+
+nav > ul{
+    display: flex;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+nav > ul a{
+    color: rgb(34, 34, 34);
+}
+.header-inner .container{
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav > ul > li{
+    margin: 0 10px;
+    position: relative;
+}
+
+nav > ul > li > a > span > i{
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.sub-nav{
+    position: absolute;
+    width: 800px;
+    background-color: white;
+    left: -150px;
+    top: 200%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px 30px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+}
+
+.sub-nav > li{
+    font-size: 15px;
+    border-bottom: 1px solid #009DDC;
+    padding: 6px;
+}
+nav > ul > li:hover .sub-nav{
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+}
+
+.fleet-nav{
+    left: -400px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.fleet-nav > li{
+    border: none;
+}
+
+.fleet-nav > li > a{
+    border-bottom: 1px solid #009DDC;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.fleet-nav > li > a i{
+    font-size: 12px;
+}
+
+.fleet-nav > li > ul > li{
+    padding: 8px;
+    font-size: 14px;
+}
+
+.raj-nav{
+    width: 300%;
+    grid-template-columns: 1fr;
+    left: -30%;
+    background-color: white;
+    padding: 8px 0;
+}
+
+.raj-nav > li:last-child{
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    align-items: center;
+}
+
+.raj-nav > li:last-child > i{
+    font-size: 11px;
+    
+}
+
+.sub-inner-nav{
+    position: absolute;
+    left: 100%;
+    background-color: white;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    top: 100%;
+    transition: 0.2s;
+}
+
+.raj-nav > li{
+    position: relative;
+}
+
+.sub-inner-nav > li{
+    padding: 8px;
+    border-bottom: 1px solid #009DDC;
+}
+
+.sub-inner-nav > li:last-child{
+    border: none;
+}
+
+.raj-nav > li:hover .sub-inner-nav{
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.banner-section{
+    background-image: url(https://www.jcrcab.com/wp-content/uploads/2017/12/jodhpur-1215239.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.banner-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 150px 0 80px 0;
+}
+
+.banner-section .container{
+    text-align: center;
+    color: white;
+}
+
+.banner-section .container > h1{
+    font-size: 32px;
+}
+
+.banner-section .container > p{
+    font-size: 22px;
+    margin: 25px 0;
+}
+
+.arrows{
+    font-size: 60px;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 4px 6px;
+}
+
+.banner-section .container > div{
+    padding: 14px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid lightgray;
+}
+
+.banner-section .container .tab-head{
+    border-bottom: 1px solid white;
+    text-align: left;
+}
+
+.banner-section .container .tab-head button{
+    padding: 10px 14px;
+    background-color: white;
+    color: black;
+    border: none;
+    font-size: 18px;
+    border-radius: 4px 4px 0 0;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.active-tab-btn{
+    background-color: #009DDC !important;
+    color: white !important;
+}
+
+.banner-section .container .tab-body input,
+.banner-section .container .tab-body select{
+    padding: 6px;
+    
+}
+
+.banner-section .container .tab-body form{
+    display: grid;
+    grid-template-columns: 40% 17% 17% 17% 9%;
+    padding-top: 20px;
+}

@@ -1,0 +1,223 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.main{
+	margin: auto;
+	margin-top: 50px;
+	width: 500px;
+	border: 1px solid red;
+}
+.head{
+	width: 250px;
+	height: 250px;
+	margin: auto;
+	background: #05adf2;
+	border-radius: 120px;
+	border: 1px solid black;
+}
+.head-inner{
+	width: 200px;
+	height: 200px;
+	margin: auto;
+	margin-top: 50px;
+	background:white;
+	border-radius:100px;
+	border: 1px solid black;
+}
+.eyes{
+	width: 90px;
+	display: flex;
+	margin: auto;
+	position: relative;
+	bottom: 40px;
+}
+.eyes-dots{
+	width: 50%;
+	height: 70px;	
+	background: white;
+	border: 1px solid black;
+	border-radius: 50%;
+}
+@keyframes eyes-move{
+	0%{
+		transform: translateY(0px);
+	}
+	50%{
+		transform: translateY(-10px);
+	}
+	100%{
+		transform: translateY(0px);
+	}
+}
+.blackdots{
+	width: 15px;
+	height: 30px;
+	margin: auto;
+	position: relative;
+	top: 30px;
+	background: black;
+	border-radius: 50%;
+	animation: eyes-move 1s 0s infinite linear;
+}
+.white-dots{
+	width: 5px;
+	height: 12px;
+	margin: auto;
+	position: relative;
+	top: 12px;
+	background: white;
+	border-radius: 50%;
+}
+.nose{
+	width: 25px;
+	height: 25px;
+	margin: auto;
+	background: red;
+	position: relative;
+	bottom: 50px;
+	border-radius: 50%;
+	border: 1px solid black;
+}
+.nose-dot{
+	width: 10px;
+	height:10px;
+	background: white;
+	position: relative;
+	top: 3px;
+	border-radius: 50%;
+}
+.nose-line{
+	width: 1px;
+	height: 60px;
+	margin: auto;
+	position: relative;
+	bottom: 50px;
+	background: black;
+}
+.mouth{
+	width: 120px;
+	height: 60px;
+	margin: auto;
+	background: red;
+	position: relative;
+	bottom: 50px;
+	border-radius: 0px 0px 60px 60px;
+	border: 1px solid black;
+}
+.body{
+	width: 220px;
+	height: 220px;
+	margin: auto;
+	border-radius: 40px 40px 0px 0px;
+	background:#05adf2;
+	position: relative;
+	bottom: 15px;
+	border: 1px solid black;
+}
+.redline{
+	width: 150px;
+	height: 15px;
+	margin: auto;
+	background: red;
+	position: relative;
+	bottom: 8px;
+	border-radius: 20px;
+}
+.yellow-dot{
+	width: 20px;
+	height: 20px;
+	margin: auto;
+	background: yellow;
+	border-radius: 50%;
+	border: 1px solid black;
+}
+.body-inner{
+	width: 180px;
+	height: 180px;
+	margin: auto;
+	background: white;
+	border-radius: 50%;
+	border: 1px solid black;
+}
+.pocket{
+	width: 120px;
+	height: 60px;
+	margin: auto;
+	position: relative;
+	top: 85px;
+	border-radius: 0px 0px 60px 60px;
+	border: 2px solid black;
+}
+.led-devider{
+	width: 1px;
+	height: 40px;
+	margin: auto;
+	background: black;
+}
+.legs{
+	width: 240px;
+	margin: auto;
+	display: flex;
+}
+.legs-paw{
+	width: 50%;
+	height: 30px;
+	background: white;
+	position: relative;
+	bottom: 27px;
+	border-radius: 30px;
+	border: 1px solid black;
+}
+.left-hand{
+	width: 30px;
+	height: 100px;
+	background: #05adf2;
+	position: relative;
+	bottom: 250px;
+	left: 120px;
+	border-radius: 20px;
+	border: 1px solid black;
+}
+@keyframes hand-move{
+	0%{
+		transform: rotate(0deg);
+	}
+	50%{
+		transform: rotate(-45deg);
+	}
+	100%{
+		transform: rotate(0deg);
+	}
+}
+.right-hand{
+	width: 90px;
+	height: 30px;
+	background: #05adf2;
+	position: relative;
+	left: 350px;
+	bottom: 350px;
+	border-radius: 20px;
+	border: 1px solid black;
+	transform-origin: left;
+	animation: hand-move 1s 0s infinite linear;
+}
+.left-paw{
+	width: 30px;
+	height:30px;
+	background: white;
+	border-radius: 50%;
+	position: relative;
+	top: 80px;
+	border: 1px solid black;
+}
+.right-paw{
+	width: 30px;
+	height:30px;
+	background: white;
+	border-radius: 50%;
+	position: relative;
+	left: 70px;
+	bottom: 2px;
+	border: 1px solid black;
+}

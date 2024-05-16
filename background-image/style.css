@@ -1,0 +1,17 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.wrapper{
+	height: 350px;
+	width: 250px;
+	border: 1px solid;
+	background-image: url('https://herohomesmohali.realtynivesh.com/wp-content/uploads/2022/05/12.jpg');
+	background-size: cover;
+}
+/*.img1{
+	height: 350px;
+	width: 250px;
+}*/

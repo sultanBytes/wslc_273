@@ -1,0 +1,94 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+	font-family: sans-serif;
+}
+
+.header{
+	background-image:url('../images/rm373batch2-08.jpg') ;
+	background-size: cover;
+	background-position: center;
+}
+
+.nav{
+	width: 1170px;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	padding-top: 30px;
+}
+.logo{
+	width: 200px;
+}
+
+.menu ul{
+	display: flex;
+}
+
+.menu ul li{
+	margin: 0 10px;
+}
+
+.menu a{
+	color: white;
+}
+
+.header-text{
+	padding: 100px 0;
+	text-align: center;
+}
+
+.header-text h1{
+	font-size: 90px;
+	color: white;
+	text-shadow: 5px 5px 5px lightgrey;
+}
+
+.header-text h1 span{
+	color: #1992CA;
+
+}
+
+.header-text h2{
+	color: white;
+	font-weight: normal;
+	font-size: 45px;
+}
+
+.header-text h2 span{
+	color: #F7971F;
+}
+
+.why-choose-section{
+	width: 1170px;
+	margin: auto;
+	border: 1px solid;
+	text-align: center;
+}
+
+.why-choose-section h3{
+	margin: 25px 0;
+}
+
+.why-choose-inner{
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 40px;
+}
+
+.why-choose-inner div{
+	width: 30%;
+	box-shadow: 5px 5px 10px 5px grey;
+	border-radius: 10px;
+	padding: 10px 30px;
+}
+
+.why-choose-inner div img{
+	margin: 20px 0;
+}
+.why-choose-inner div p{
+	font-size: 14px;
+}

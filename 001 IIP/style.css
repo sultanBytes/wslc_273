@@ -1,0 +1,120 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+body{
+	background-color: black;
+}
+
+.main{
+	width: 1000px;
+	height: 1000px;
+/*	border: 2px solid red;*/
+	margin: auto;
+}
+
+.header{
+/*	width: 1000px;*/
+	height: 90px;
+	background-color: rgb(22, 86, 182);
+	padding: 15px 10px;
+}
+
+.logo{
+	width: 150px;
+	float: left;
+}
+
+.logo_img{
+	width: 150px;
+}
+
+.nav{
+	width: 660px;
+	height: 50px;
+	float: right;
+}
+
+.nav-item{
+	width: 110px;
+	height: 50px;
+	background-image: url('img/menu-bg.png');
+	background-size: cover;
+	float: left;
+	text-align: center;
+	color: white;
+	line-height: 50px;
+}
+
+.banner-section{
+/*	width: 1000px;*/
+	height: 370px;
+	background-image: url('img/banner.jpg');
+	background-size: cover;
+	background-position: center;
+	text-align: right;
+	padding: 45px 10px;
+	font-size: 30px;
+	font-weight: 600;
+	line-height: 45px;
+	color: #0095DA;
+	letter-spacing: 2px;
+}
+
+.third-section{
+/*	width: 1000px;*/
+	height: 300px;
+/*	background-color: greenyellow;*/
+}
+.third-left{
+	width: 460px;
+	height: 300px;
+	float: left;
+/*	border: 1px solid green;*/
+}
+.third-right{
+	width: 540px;
+	height: 300px;
+	float: left;
+/*	border: 1px solid blue;*/
+}
+
+.left-item{
+	width: 220px;
+	height: 140px;
+	margin: 5px;
+	background-image: url('img/abstract-textured-backgound.jpg');
+	background-size: cover;
+	float: left;
+	text-align: center;
+	padding-top: 30px;
+}
+
+.para-left{
+	line-height: 50px;
+}
+.fourth-section{
+	height: 200px;
+}
+
+.fourth-section-c1{
+	width: 300px;
+	height: 200px;
+	border: 2px solid white;
+	background-image: url('img/blue-concrete-wall-with-scratches.jpg');
+	background-size: cover;
+	background-position: center;
+	color: white;
+	padding: 20px 40px;
+}
+
+.main-about{
+	height: 800px;
+}
+
+.anchor{
+	color: white;
+	text-decoration: none;
+}
