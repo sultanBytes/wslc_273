@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // for(let i = 5; i >= 0; i--){
+        //     for(let j = 0; j <= 5; j++){
+        //         console.log('first')
+        //     }
+        // }
+
+        // *****armstrong numbers*****
+
+        // let x = 100;
+        // let y = 10000;
+
+        // let armNo = [];
+
+        // for(let i = x; i <= y; i++){
+        //     let numST = i.toString();
+        //     let len = numST.length;
+
+        //     let total = 0;
+
+        //     for(let j = 0; j < len; j++){
+        //         total += numST[j] ** len;
+        //     }
+
+        //     if(numST == total)
+        //     {
+        //         armNo.push(i);
+        //     }
+
+        // };
+
+
+        // console.log(armNo);
+
+        // **********
+
+        // **** prime numbers *****
+
+        let x = 1;
+        let y = 1000;
+        let primsNo = [];
+
+        for(let i = x; i <= y; i++){
+            let isPrime = true;
+
+            for(let j = 2; j < i; j++){
+                if(i % j == 0){
+                    isPrime = false;
+
+                    break;
+                }
+            }
+
+            if(isPrime){
+                primsNo.push(i);
+            }
+            
+        };
+
+        console.log(primsNo)
+
+        //fibonacci
+        // 1-100 (sum of odd numbers)
+        // 100-1000 (sum of even numbers)
+    </script>
+</body>
+</html>
