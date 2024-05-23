@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="list">1</li>
+        <li class="list">2</li>
+        <li class="list">3</li>
+        <li class="list">4</li>
+        <li class="list">5</li>
+        <li class="list">6</li>
+    </ul>
+
+    <div id="main">
+        <div class="user">user1</div>
+    </div>
+
+    <div id="main">
+        <div class="user">user2</div>
+    </div>
+
+    <script>
+        // const p = document.getElementById('main');
+
+        const q = document.getElementsByClassName('list');
+
+        const r = document.getElementsByTagName('div');
+
+        // const s = p.getElementsByClassName('user');
+        // const t = document.getElementsByClassName('user');
+
+
+
+        // console.log(r)
+        // console.log(q);
+
+        // console.log(s)
+        // console.log(t)
+
+        // const x = document.querySelector('ul li:nth-child(4)');
+        // console.log(x.innerText);
+        // console.log(x.innerHTML);
+        // const y = document.querySelectorAll('.list');
+
+        // console.log(x)
+        // console.log(y)
+
+        // for(let i = 0; i < q.length; i++)
+        // {
+        //     console.log(q[i])
+        // }
+
+        const ul = document.querySelector('ul');
+
+        const user2 = document.querySelector('body div:last-child');
+
+        user2.innerText = "<div>hello</div>";
+
+        // let m = ul.innerText;
+
+        // ul.innerText = 'hello';
+
+        // console.log(m)
+        // console.log(ul.innerHTML)
+        // console.log(ul.innerText)
+    </script>
+</body>
+<script>
+    //dom selector 
+    // 1) document.getElementById('id');
+    // 2) document.getElementsByClassName('classname')
+    // 3) document.getElementsByTagName('tagname');
+    // 4) document.querySelector('css selector')
+    // 5) document.querySelectorAll('css selector')
+
+
+    //dom method
+    // innerText
+    // innerHTML
+
+</script>
+</html>
