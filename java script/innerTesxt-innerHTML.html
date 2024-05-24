@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            text-indent: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <ul>
+            <li>1 hello</li>
+            <li>2 hello</li>
+            <li>3 hello</li>
+            <li>4 hello</li>
+            <li>5 hello</li>
+            <li>6 hello</li>
+        </ul>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga cum aspernatur deleniti fugit, ullam nesciunt! Officia vero sunt repellat omnis voluptas veniam, dolorum aliquam sed fugit quisquam tempora corporis placeat.
+        </p>
+    </div>
+
+
+    <div class="main">
+        
+        <ul>
+            <li>1 hello</li>
+            <li>2 hello</li>
+            <li>3 hello</li>
+            <li>4 hello</li>
+            <li>5 hello</li>
+            <li>6 hello</li>
+        </ul>
+    </div>
+
+    <div id="container">
+        <div class="user">user1</div>
+    </div>
+    <div id="container">
+        <div class="user">user2</div>
+    </div>
+
+    <script>
+        const main = document.getElementsByClassName('main');
+        const para = document.querySelector('.main p');
+
+        const x = main[0].innerText;
+        const y = main[0].innerHTML;
+
+        const ptext = para.innerText;
+        const pHtml = para.innerHTML;
+
+        // console.log(x)
+        // console.log(y)
+        console.log(ptext)
+        console.log(pHtml)
+
+
+        //forEach
+    </script>
+</body>
+</html>

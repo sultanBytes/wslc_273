@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        .tab-container{
+            width: 600px;
+            margin: auto;
+            border: 1px solid black;
+        }
+
+        .tab-head{
+            padding: 10px;
+            border-bottom: 1px solid black;
+        }
+
+        .tab-head button{
+            padding: 6px 12px;
+            background-color: black;
+            border: none;
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .tab-body{
+            text-align: center;
+            padding: 10px;
+            height: 100px;
+        }
+
+        .tab-content{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab-container">
+        <div class="tab-head">
+            <button onclick="chagedata(0)">tab 1</button>
+            <button onclick="chagedata(1)">tab 2</button>
+            <button onclick="chagedata(2)">tab 3</button>
+            <button onclick="chagedata(3)">tab 4</button>
+            <button onclick="chagedata(4)">tab 5</button>
+        </div>
+        <div class="tab-body">
+            content of tab 1
+        </div>
+
+        <div class="tab-content">
+            <div>content of tab 1</div>
+            <div>content of tab 2</div>
+            <div>content of tab 3</div>
+            <div>content of tab 4</div>
+            <div>content of tab 5</div>
+        </div>
+    </div>
+
+    <script>
+        const allContent = document.querySelectorAll('.tab-content div');
+        const tabBody = document.querySelector('.tab-body');
+
+        console.log(allContent)
+
+        const chagedata = (index)=>{
+
+            tabBody.innerText = allContent[index].innerText;
+        }
+    </script>
+</body>
+
+</html>
