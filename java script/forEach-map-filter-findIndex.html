@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //forEach, map, filter, findIndex
+
+
+        // **** forEach ****
+        const arr = [10,20,30,40,50,60,70,80];
+
+
+        const x = arr.forEach((v,i)=>{
+            // console.log(v)
+
+        });
+
+        // console.log(x)  //foraEach returns undefined
+
+         // **** map ****
+        // const y = arr.map((v, i)=> {
+        //     v = v**2
+        //     return v
+        // });
+
+        const y = arr.map((v, i)=>  v = v**2);
+
+        // console.log(y) // map returns an array
+
+         // **** filter ****
+
+
+        const z =  arr.filter((v)=> v > 40);
+
+        // console.log(z)
+
+        // **** findIndex ****
+
+        const a = arr.findIndex((v)=> v==50)
+
+        // console.log(a)
+
+        const data = [
+            {
+                name:'john',
+                contact:'test@john.com'
+            },
+            {
+                name:'janny',
+                contact:'test@janny.com'
+            }
+
+            ,{
+                name:'rocky',
+                contact:'rocky@john.com'
+            },
+            {
+                name:'john',
+                contact:'test@john.com'
+            },
+        ];
+
+        const ind = data.findIndex((v)=> v.name == 'john');
+
+        console.log(ind)
+
+
+    </script>
+</body>
+</html>
