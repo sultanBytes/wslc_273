@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 500px;
+            border: 6px double skyblue;
+            border-radius: 6px;
+            background-color: black;
+            color: skyblue;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: 600;
+            margin: auto;
+        }
+
+        .btns{
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .active{
+            background-color: skyblue;
+            color: black;
+            border-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus necessitatibus error ducimus ipsum facere tenetur ex cumque sequi adipisci, voluptatem quisquam labore culpa cum inventore? Nihil tenetur doloremque architecto quasi.
+    </div>
+    <div class="btns">
+        <button>add class</button>
+        <button>remove class</button>
+        <button> toggle class</button>
+    </div>
+
+    <script>
+        const btns = document.querySelectorAll('.btns button');
+        const box = document.querySelector('.container');
+
+        btns[0].addEventListener('click', ()=>{
+            box.classList.add('active');
+        })
+
+        btns[1].addEventListener('click', ()=>{
+            box.classList.remove('active');
+        })
+
+        btns[2].addEventListener('click', ()=>{
+            box.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

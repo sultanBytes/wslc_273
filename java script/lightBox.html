@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             list-style: none;
         }
 
-        .container{
+        .container {
             width: 1220px;
             margin: auto;
-           
+
         }
 
-        h2{
+        h2 {
             padding: 10px 0;
             text-align: center;
         }
 
-        .inner{
+        .inner {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             padding: 10px;
@@ -32,13 +34,13 @@
             border-radius: 6px;
         }
 
-        .card img{
+        .card img {
             width: 100%;
             height: 100%;
             cursor: pointer;
         }
 
-        .pop-up{
+        .pop-up {
             width: 60vw;
             position: fixed;
             top: -50%;
@@ -47,13 +49,49 @@
             transition: 0.4s;
         }
 
-        .pop-up img{
+        .pop-up img {
             width: 100%;
+        }
+
+        .close-pop-up-btn {
+            position: absolute;
+            right: 10px;
+            top: 0;
+            font-size: 40px;
+            -webkit-text-stroke: 1px white;
+            color: black;
+            cursor: pointer;
+        }
+
+        .img-controller{
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            font-size: 50px;
+            color: black;
+            -webkit-text-stroke: 2px white;
+            text-shadow: 0 0 4px lightgray;
+        }
+
+        .img-controller i{
+            cursor: pointer;
         }
     </style>
 </head>
+
 <body>
     <div class="pop-up">
+        <div class="close-pop-up-btn">
+            &times;
+        </div>
+        <div class="img-controller">
+            <i class="fa-solid fa-chevron-left"></i>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
         <img src="" alt="">
     </div>
     <div class="container">
@@ -126,20 +164,58 @@
         const allImgs = document.querySelectorAll('.card img');
         const popUp = document.querySelector('.pop-up');
         const popUpImg = document.querySelector('.pop-up img');
+        const closeBtn = document.querySelector('.close-pop-up-btn');
+        const nextBtn = document.querySelector('.img-controller i:last-child');
+        const prevBtn = document.querySelector('.img-controller i:first-child');
 
-        allImgs.forEach((img)=>{
-            img.addEventListener('click', ()=>{
-               const currentSrc = img.src;
+        let currentImgIndex;
 
-               popUpImg.src = currentSrc;
+        allImgs.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                currentImgIndex = index;
+
+                // console.log(currentImgIndex);
+
+                const currentSrc = img.src;
+
+                popUpImg.src = currentSrc;
                 popUp.style.top = '50%';
             })
         });
 
         popUp.addEventListener('mouseleave', ()=>{
-            popUp.style.top = '-50%';
+           popUp.style.top = '-50%';
         })
+
+        closeBtn.addEventListener('click', ()=>{
+           popUp.style.top = '-50%';
+        });
+
+        nextBtn.addEventListener('click', ()=>{
+            currentImgIndex++;
+
+            if(currentImgIndex > allImgs.length - 1)
+            {
+                currentImgIndex = 0;
+            }
+
+            popUpImg.src = allImgs[currentImgIndex].src;
+
+        });
+
+        prevBtn.addEventListener('click', ()=>{
+            currentImgIndex--;
+
+            if(currentImgIndex < 0)
+            {
+                currentImgIndex = allImgs.length - 1;
+            }
+
+            popUpImg.src = allImgs[currentImgIndex].src;
+
+        });
 
     </script>
 </body>
+
 </html>
