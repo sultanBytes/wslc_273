@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="list">
+    <ul class="main">
+        <li>hello li 1</li>
+        <li>hello li 2</li>
+        <li>hello li 3</li>
+        <li>hello li 4</li>
+        <li class="list">hello li 5</li>
+        <li class="list">hello li 6</li>
+        <li class="list">hello li 7</li>
+        <li class="list">hello li 8</li>
+    </ul>
+    <ol class="container">
+        <li>hello ol 1</li>
+        <li>hello ol 2</li>
+        <li>hello ol 3</li>
+        <li>hello ol 4</li>
+        <li>hello ol 5</li>
+        <li>hello ol 6</li>
+    </ol>
+    
+    <script>
+        const theLi = document.querySelector('.main li:nth-child(3)');
+        //returns next sibling element
+        const nextLi = theLi.nextElementSibling;
+
+        //returns previous sibling element
+        const prevLi = theLi.previousElementSibling;
+
+        //returns parent element
+        const parentEl = theLi.parentNode;
+
+        // parentEl.style.backgroundColor = 'red'
+
+        const childs = parentEl.childNodes;
+
+        const directChilds = parentEl.children;
+
+        // const firstChild = parentEl.firstChild;
+
+        const firstChild = parentEl.firstElementChild;
+        const lastChild = parentEl.lastElementChild;
+
+        const closestsOl = theLi.closest('.list');
+
+
+
+
+
+
+        console.log(closestsOl)
+    </script>
+</body>
+</html>

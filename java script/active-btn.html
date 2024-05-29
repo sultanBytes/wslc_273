@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 800px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container button{
+            padding: 8px 30px;
+            background-color: skyblue;
+            border: 1px solid;
+            color: black;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        .active{
+            background-color: black !important;
+            color: white !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button  class="active">btn 1</button>
+        <button>btn 2</button>
+        <button>btn 3</button>
+        <button>btn 4</button>
+        <button>btn 5</button>
+        <button>btn 6</button>
+    </div>
+    <script>
+        const allBtn = document.querySelectorAll('.container button');
+
+        allBtn.forEach((btn)=>{
+            btn.addEventListener('click', ()=>{
+
+                allBtn.forEach((button)=>{
+                    button.classList.remove('active');
+                })
+
+
+                btn.classList.add('active');
+            })
+        })
+
+    </script>
+</body>
+
+</html>
