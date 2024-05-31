@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: whitesmoke;
+        }
+        .container{
+            width: 400px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 6px 6px lightgray;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .container input[type="text"]{
+            display: block;
+            width: 100%;
+            padding: 8px;
+            border: 1px solid grey;
+            border-radius: 4px;
+        }
+
+        .container button{
+            margin-top: 20px;
+            padding: 6px 30px;
+            border: 1px solid green;
+            border-radius: 4px;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        .container button:before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: green;
+            top: 0;
+            left: 0;
+            transition: 0.2s;
+            transform: scaleX(0);
+        }
+
+        .container button span{
+            position: relative;
+            color: green;
+        }
+
+        .container button:hover::before{
+            transform: scaleX(1);
+        }
+
+        .container button:hover span{
+            color: white;
+        }
+
+
+        .popoup-counter{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            padding: 20px;
+            border: 1px solid black;
+            background-color: black;
+            color: skyblue;
+            width: 600px;
+            height: 300px;
+            font-size: 100px;
+            display: grid;
+            place-items: center;
+            border-radius: 10px;
+            transform:translate(-50%, -50%) scale(0);
+            transition: 0.2s;
+        }
+
+        .popoup-counter button{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" placeholder="Drop time in seconds">
+        <button>
+            <span>Start countdown</span>
+        </button>
+
+        
+    </div>
+
+    <div class="popoup-counter">
+        <p>000 : 00</p>
+
+        <button>Restart</button>
+    </div>
+
+    <script>
+        const startBtn = document.querySelector('.container button');
+        const timeContainer = document.querySelector('.popoup-counter p');
+        const timeContainerBox = document.querySelector('.popoup-counter');
+        const restartBtn = document.querySelector('.popoup-counter button');
+
+        let ms = 99;
+        let sec = 0;
+        let intervalId;
+
+        const runCountDown = ()=>{
+
+            ms--;
+            timeContainer.innerHTML = `${(sec -1  < 10) ? '0' + (sec -1)  : (sec - 1)} : ${(ms < 10) ? '0' + ms : ms}`;
+
+            if(ms < 1)
+            {
+                ms = 100;
+                sec--;
+            }
+
+            if(sec == 0){
+                clearInterval(intervalId);
+                timeContainer.innerHTML = 'Time up';
+
+                restartBtn.style.display = 'inline-block';
+            }
+
+        }
+
+        startBtn.addEventListener('click', ()=>{
+            sec = Number(document.querySelector('.container input').value);
+            timeContainer.innerHTML = `${sec - 1} : ${ms}`;
+            timeContainerBox.style.transform = 'translate(-50%, -50%) scale(1)';
+
+
+            intervalId = setInterval(runCountDown, 10);
+        });
+
+        restartBtn.addEventListener('click', ()=>{
+            timeContainerBox.style.transform = 'translate(-50%, -50%) scale(0)';
+            document.querySelector('.container input').value = '';
+        })
+
+    </script>
+</body>
+</html>
