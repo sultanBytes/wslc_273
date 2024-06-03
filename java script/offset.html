@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            height: 60vh;
+            border: 2px solid;
+        }
+
+        .thisSection{
+            background-color: yellow;
+            display: grid;
+            place-items: center;
+        }
+        .thisSection div{
+            width: 400px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section class="thisSection">
+        <div></div>
+    </section>
+    <section></section>
+    <section></section>
+
+    <script>
+        const redDiv = document.querySelector('.thisSection div');
+        const Dheight = redDiv.offsetHeight;
+        const Dwidth = redDiv.offsetWidth;
+        const Dtop = redDiv.offsetTop;
+        const Dleft = redDiv.offsetLeft;
+
+
+       
+
+
+
+
+
+        const winHeight = window.innerHeight;
+        const winWidth = window.innerWidth;
+
+
+
+        const myFunction = ()=>{
+            console.log('reached');
+        };
+
+
+        window.addEventListener('scroll', ()=>{
+            const scrollCount = pageYOffset;
+
+            if(scrollCount > Dtop -  winHeight * 0.75){
+                myFunction();
+            }
+
+        })
+    </script>
+</body>
+</html>

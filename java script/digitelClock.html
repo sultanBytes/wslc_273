@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        body{
+            background-color: #f5f5f5;
+        }
+        .container{
+            width: 600px;
+            margin:100px auto;
+            background-color: black;
+            color: skyblue;
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 8px 4px skyblue;
+        }
+
+        .time{
+            font-size: 70px;
+            font-weight: 600;
+            padding-bottom: 40px;
+        }
+
+        .date{
+            font-size: 40px;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="time">
+            00 : 00 : 00 : AM
+        </div>
+        <div class="date">
+            00/00/0000
+        </div>
+    </div>
+
+    <script>
+        const timeContainer = document.querySelector('.time');
+        const dateContainer = document.querySelector('.date');
+
+        const runClock = ()=>{
+            const now = new Date();
+
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+
+            let amPm = (hours >= 12) ? "PM" : "AM";
+
+            hours = (hours > 12) ? hours - 12 : hours;
+            hours = (hours < 10) ? "0" + hours : hours;
+
+            minutes = (minutes < 10) ? "0" + minutes : minutes;
+
+            seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+            timeContainer.innerHTML = `${hours} : ${minutes} : ${seconds} : ${amPm}`;
+
+            dateContainer.innerHTML = now.toDateString();
+        }
+
+        runClock();
+
+        setInterval(runClock, 1000);
+    </script>
+</body>
+</html>
