@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="runTime()">console</button>
+    <button onclick="stopTime()">stop</button>
+
+    <div>
+        <input type="password" id="inp">
+        <button onclick="passwordHandle(this)">show</button>
+    </div>
+
+    <script>
+
+
+        const passwordHandle = (btn)=>{
+            const inp = document.querySelector('#inp');
+
+            if(inp.type == 'password')
+            {
+                btn.innerText = 'Hide';
+                inp.type = 'text';
+
+                setTimeout(()=>{
+                    btn.innerText = 'Show';
+                    inp.type = 'password';
+                },1000);
+            }
+        };
+
+        let timeFunctionId;
+
+        const clgFunction = ()=>{
+            console.log('object');
+        };
+
+        
+
+        const runTime = ()=>{
+            timeFunctionId = setTimeout(clgFunction, 5000);
+        }
+
+        const stopTime = ()=>{
+            clearTimeout(timeFunctionId);
+        }
+    </script>
+</body>
+</html>
