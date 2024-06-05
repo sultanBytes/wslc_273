@@ -24,7 +24,7 @@
             border-radius: 8px;
             box-shadow: 0 0 8px 6px lightgray;
             width: 500px;
-
+            text-align: center;
         }
 
         .timeContainer input[type="time"]{
@@ -34,7 +34,7 @@
             border-radius: 4px;
         }
 
-        .timeContainer #setAlarm{
+        .timeContainer button{
             padding: 6px 40px;
             background-color: lightseagreen;
             border: none;
@@ -48,6 +48,13 @@
         .timeContainer p{
             text-align: center;
             padding: 10px;
+            display: none;
+        }
+
+        #resetAlarm,
+        #stopAlarm,
+        #snoozeAlarm{
+            display: none;
         }
     </style>
 </head>
@@ -56,6 +63,9 @@
         <div class="timeContainer">
             <input type="time">
             <button id="setAlarm">Set alarm</button>
+            <button id="resetAlarm">Reset alarm</button>
+            <button id="stopAlarm">Stop alarm</button>
+            <button id="snoozeAlarm">Snooze alarm</button>
             <p>Next alarm will play on 10:40</p>
         </div>
     </div>
@@ -64,14 +74,25 @@
     <script>
         const userInp = document.querySelector('.timeContainer input[type="time"]');
         const setAlarmBtn = document.querySelector('#setAlarm');
+        const resetAlarmBtn = document.querySelector('#resetAlarm');
+        const setAlarmPara = document.querySelector('.timeContainer p');
+        const stopAlarm = document.querySelector('#stopAlarm');
+        const snoozeAlarm = document.querySelector('#snoozeAlarm');
 
         const alAudio = new Audio('./audio/sample-3s.mp3');
+
+        let timeOutAlaram;
 
 
         const playAlarm = ()=>{
             alAudio.loop = true;
             alAudio.play();
+
             setAlarmBtn.style.display = 'none';
+            resetAlarmBtn.style.display = 'none';
+            setAlarmPara.style.display = 'none';
+            stopAlarm.style.display = 'inline-block';
+            snoozeAlarm.style.display = 'inline-block';
         }
 
         setAlarmBtn.addEventListener('click', ()=>{
@@ -82,6 +103,12 @@
 
                 return;
             }
+            userInp.value = '';
+            setAlarmPara.innerText = `Next alarm will play on ${timeVal}`;
+            setAlarmPara.style.display = 'block';
+            userInp.style.display = 'none';
+            resetAlarmBtn.style.display = 'inline-block';
+            setAlarmBtn.style.display = 'none';
 
             const now = new Date();
 
@@ -89,9 +116,44 @@
 
             const timeDifference = userTime - now;
 
-            setTimeout(playAlarm, timeDifference);
+            timeOutAlaram = setTimeout(playAlarm, timeDifference);
 
-        })
+        });
+
+        resetAlarmBtn.addEventListener('click', ()=>{
+            clearTimeout(timeOutAlaram);
+
+            setAlarmPara.style.display = 'none';
+            userInp.style.display = 'inline-block';
+            resetAlarmBtn.style.display = 'none';
+            setAlarmBtn.style.display = 'inline-block';
+        });
+
+        stopAlarm.addEventListener('click', ()=>{
+            alAudio.pause();
+            alAudio.currentTime = 0;
+
+
+            setAlarmBtn.style.display = 'inline-block';
+            userInp.style.display = 'inline-block';
+            stopAlarm.style.display = 'none';
+            snoozeAlarm.style.display = 'none';
+        });
+
+        snoozeAlarm.addEventListener('click', ()=>{
+            const snoozeTime = Number(prompt('Please provoide snooz time in seconds'));
+            alAudio.pause();
+
+            alAudio.currentTime = 0;
+            stopAlarm.style.display = 'none';
+            snoozeAlarm.style.display = 'none';
+            resetAlarmBtn.style.display = 'inline-block';
+
+            setAlarmPara.innerText = `Next alarm will play after ${snoozeTime} seconds`;
+            setAlarmPara.style.display = 'inline-block';
+
+            timeOutAlaram = setTimeout(playAlarm, snoozeTime * 1000);
+        });
     </script>
 </body>
 </html>
