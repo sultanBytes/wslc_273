@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+            font-family: sans-serif;
+        }
+        body{
+            background-color: whitesmoke;
+        }
+        .container{
+            width: 500px;
+            background-color: white;
+            padding: 20px;
+            margin:20px auto;
+            box-shadow: 0 0 6px 4px lightgray;
+            border-radius: 6px;
+        }
+        .to-do-head{
+            display: grid;
+            grid-template-columns: 8fr 3fr;
+            gap: 10px;
+        }
+        
+        .to-do-head input{
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid grey;
+        }
+
+        .to-do-head button{
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            background-color: hotpink;
+            cursor: pointer;
+            border: 1px solid hotpink;
+            border-radius: 4px;
+        }
+        .to-do-head button:hover{
+            background-color: white;
+            color: hotpink;
+        }
+        
+        .to-do-body ul{
+            padding-top: 20px;
+
+        }
+
+        .to-do-body ul li{
+            display: grid;
+            grid-template-columns: 1fr 5fr 1fr;
+            border-bottom: 1px solid grey;
+            padding: 10px 0;
+            border-radius: 4px;
+
+        }
+
+        .to-do-body ul li span{
+            font-size: 18px;
+            text-transform: capitalize;
+
+        }
+
+        .to-do-body ul li button{
+            background-color: red;
+            border: 1px solid red;
+            border-radius: 4px;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .to-do-body ul li button:hover{
+            background-color: white;
+            color: red;
+            
+        }
+
+        .done-task{
+            color: grey;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="to-do-head">
+            <input type="text" placeholder="Add a task">
+            <button>Add Task</button>
+        </div>
+        <div class="to-do-body">
+            <ul>
+                <!-- <li>
+                    <input type="checkbox">
+                    <span>task</span>
+                    <button>Delete</button>
+                </li> -->
+
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const userInp = document.querySelector('.to-do-head input[type="text"]');
+        const addBtn = document.querySelector('.to-do-head button');
+        const taskContainer = document.querySelector('.to-do-body ul');
+
+
+        const showData = ()=>{
+            taskContainer.innerHTML = '';
+
+            const dataToShow = JSON.parse(localStorage.getItem('wslc_273_to_do')) || [];
+
+            dataToShow.forEach((item)=>{
+                const newLi = document.createElement('li');
+
+                const checkBox = document.createElement('input');
+                checkBox.type = 'checkbox'
+
+                const newSpan = document.createElement('span');
+                newSpan.innerText = item.task;
+
+                const newDltBtn = document.createElement('button');
+                newDltBtn.innerText = 'Delete';
+
+                newLi.appendChild(checkBox);
+                newLi.appendChild(newSpan);
+                newLi.appendChild(newDltBtn);
+
+                taskContainer.appendChild(newLi);
+
+            });
+        };
+
+        showData();
+
+
+        addBtn.addEventListener('click', ()=>{
+
+            const taskData = JSON.parse(localStorage.getItem('wslc_273_to_do')) || [];
+
+            let task = userInp.value;
+
+            let newId = 1;
+
+            if(taskData.length !== 0)
+            {
+                newId = taskData[taskData.length - 1].id + 1;
+            }
+
+            const taskObj = {
+                id: newId,
+                task:task,
+                status:false
+            };
+
+            taskData.push(taskObj);
+
+            localStorage.setItem('wslc_273_to_do', JSON.stringify(taskData));
+
+            userInp.value = '';
+            showData();
+        });
+
+
+
+        // const dummyArray = [{name:'hello', contact:'test'},{name:'hello', contact:'test'},{name:'hello', contact:'test'}];
+        // localStorage.setItem('wslc_273_to_do', JSON.stringify(dummyArray));
+
+        // const a = JSON.parse(localStorage.getItem('wslc_273_to_do'));
+
+    //    console.log(a);
+    </script>
+</body>
+</html>
