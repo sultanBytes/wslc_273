@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -13,30 +14,33 @@
             text-decoration: none;
             font-family: sans-serif;
         }
-        body{
+
+        body {
             background-color: whitesmoke;
         }
-        .container{
+
+        .container {
             width: 500px;
             background-color: white;
             padding: 20px;
-            margin:20px auto;
+            margin: 20px auto;
             box-shadow: 0 0 6px 4px lightgray;
             border-radius: 6px;
         }
-        .to-do-head{
+
+        .to-do-head {
             display: grid;
             grid-template-columns: 8fr 3fr;
             gap: 10px;
         }
-        
-        .to-do-head input{
+
+        .to-do-head input {
             padding: 10px;
             border-radius: 4px;
             border: 1px solid grey;
         }
 
-        .to-do-head button{
+        .to-do-head button {
             font-size: 18px;
             font-weight: 600;
             color: white;
@@ -45,17 +49,18 @@
             border: 1px solid hotpink;
             border-radius: 4px;
         }
-        .to-do-head button:hover{
+
+        .to-do-head button:hover {
             background-color: white;
             color: hotpink;
         }
-        
-        .to-do-body ul{
+
+        .to-do-body ul {
             padding-top: 20px;
 
         }
 
-        .to-do-body ul li{
+        .to-do-body ul li {
             display: grid;
             grid-template-columns: 1fr 5fr 1fr;
             border-bottom: 1px solid grey;
@@ -64,13 +69,13 @@
 
         }
 
-        .to-do-body ul li span{
+        .to-do-body ul li span {
             font-size: 18px;
             text-transform: capitalize;
 
         }
 
-        .to-do-body ul li button{
+        .to-do-body ul li button {
             background-color: red;
             border: 1px solid red;
             border-radius: 4px;
@@ -81,23 +86,46 @@
             padding: 4px;
         }
 
-        .to-do-body ul li button:hover{
+        .to-do-body ul li button:hover {
             background-color: white;
             color: red;
-            
+
         }
 
-        .done-task{
+        .done-task {
             color: grey;
             text-decoration: line-through;
         }
+
+        .controlles{
+            display: grid;
+            padding: 10px 0;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 6px;
+        }
+
+        .controlles button{
+            background-color: yellow;
+            font-weight: 500;
+            border: 1px solid black;
+            border-radius: 4px;
+            cursor: pointer;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="to-do-head">
             <input type="text" placeholder="Add a task">
             <button>Add Task</button>
+        </div>
+        <div class="controlles">
+            <button id="all-tasks-btn">All Tasks</button>
+            <button id="done-tasks-btn">Done tasks</button>
+            <button>Pending tasks</button>
+            <button>Delete done tasks</button>
+            <button>Delete all</button>
         </div>
         <div class="to-do-body">
             <ul>
@@ -115,24 +143,60 @@
         const userInp = document.querySelector('.to-do-head input[type="text"]');
         const addBtn = document.querySelector('.to-do-head button');
         const taskContainer = document.querySelector('.to-do-body ul');
+        const doneTaskBtn = document.querySelector('#done-tasks-btn');
+        const allTaskBtn = document.querySelector('#all-tasks-btn');
 
 
-        const showData = ()=>{
+        const showData = (dataToShow = JSON.parse(localStorage.getItem('wslc_273_to_do')) || []) => {
             taskContainer.innerHTML = '';
 
-            const dataToShow = JSON.parse(localStorage.getItem('wslc_273_to_do')) || [];
+            // const dataToShow = JSON.parse(localStorage.getItem('wslc_273_to_do')) || [];
 
-            dataToShow.forEach((item)=>{
+            dataToShow.forEach((item) => {
                 const newLi = document.createElement('li');
 
                 const checkBox = document.createElement('input');
-                checkBox.type = 'checkbox'
+                checkBox.type = 'checkbox';
+                checkBox.checked = item.status;
+
+
+                checkBox.onclick = () => {
+                    const dataToHandleStatus = JSON.parse(localStorage.getItem('wslc_273_to_do')) || [];
+
+                    const dataIndex = dataToHandleStatus.findIndex((v) => v.id === item.id);
+
+                    dataToHandleStatus[dataIndex].status = checkBox.checked;
+
+                    localStorage.setItem('wslc_273_to_do', JSON.stringify(dataToHandleStatus));
+                    showData();
+                };
 
                 const newSpan = document.createElement('span');
                 newSpan.innerText = item.task;
 
+                if (item.status) {
+                    newSpan.classList.add('done-task');
+                }
+
                 const newDltBtn = document.createElement('button');
                 newDltBtn.innerText = 'Delete';
+
+                newDltBtn.onclick = () => {
+
+                    if(!confirm('Are you sure to delete this data')){
+                        return;
+                    }
+                    
+
+                    const dataToHandleDelete = JSON.parse(localStorage.getItem('wslc_273_to_do')) || [];
+
+                    const dataIndexToDelete = dataToHandleDelete.findIndex((v) => v.id === item.id);
+
+                    dataToHandleDelete.splice(dataIndexToDelete, 1);
+
+                    localStorage.setItem('wslc_273_to_do', JSON.stringify(dataToHandleDelete));
+                    showData();
+                };
 
                 newLi.appendChild(checkBox);
                 newLi.appendChild(newSpan);
@@ -146,7 +210,7 @@
         showData();
 
 
-        addBtn.addEventListener('click', ()=>{
+        addBtn.addEventListener('click', () => {
 
             const taskData = JSON.parse(localStorage.getItem('wslc_273_to_do')) || [];
 
@@ -154,15 +218,14 @@
 
             let newId = 1;
 
-            if(taskData.length !== 0)
-            {
+            if (taskData.length !== 0) {
                 newId = taskData[taskData.length - 1].id + 1;
             }
 
             const taskObj = {
                 id: newId,
-                task:task,
-                status:false
+                task: task,
+                status: false
             };
 
             taskData.push(taskObj);
@@ -174,13 +237,24 @@
         });
 
 
+        doneTaskBtn.addEventListener('click', ()=>{
+            const handleChecked =  JSON.parse(localStorage.getItem('wslc_273_to_do')) || [];
+            const checkedData = handleChecked.filter((v)=> v.status === true);
+            showData(checkedData);
+
+        });
+
+        allTaskBtn.addEventListener('click', ()=>{
+            showData();
+        })
 
         // const dummyArray = [{name:'hello', contact:'test'},{name:'hello', contact:'test'},{name:'hello', contact:'test'}];
         // localStorage.setItem('wslc_273_to_do', JSON.stringify(dummyArray));
 
         // const a = JSON.parse(localStorage.getItem('wslc_273_to_do'));
 
-    //    console.log(a);
+        //    console.log(a);
     </script>
 </body>
+
 </html>
