@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap');
+
+*{
+    font-family: "Assistant", sans-serif !important;
+    list-style: none;
+}
+
+.nav-item{
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.navbar-brand{
+    width: 180px;
+}
+
+.nav-item a{
+    color: black !important;
+}
+.nav-item a:hover{
+    color: red !important;
+}
+
+.hero-section-details{
+    top: 20%;
+    left: 55%;
+    background-color: rgba(255, 255, 255, 0.596);
+    width: 500px;
+}
+
+.hero-section-details h1{
+    background-color: red;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    padding: 8px 12px;
+    text-align: center;
+}
