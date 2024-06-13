@@ -1,5 +1,49 @@
+@media only screen and (max-width: 1250px){
+    #navbarNav li{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 1150px){
+    #navbarNav li{
+        font-size: 10px;
+    }
+}
+
 @media only screen and (max-width: 992px){
     #navbarNav{
         background-color: hsl(0, 100%, 50%);
+    }
+
+    .hero-section-details{
+        width: unset !important;
+        max-width: 500px;
+        position: unset !important;
+        margin: auto;
+    }
+
+    .about-hero-homes figure{
+        height: 400px;
+        max-width: 500px;
+        margin: auto;
+    }
+    
+    .about-hero-homes p{
+        font-weight: 500;
+        line-height: 22px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    .logo{
+        width: 120px;
+    }
+    .hero-section-details h1{
+        font-size: 18px;
+    }
+
+    .hero-section-details ul li{
+        font-size: 16px;
     }
 }

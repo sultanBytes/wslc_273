@@ -25,14 +25,81 @@
     top: 20%;
     left: 55%;
     background-color: rgba(255, 255, 255, 0.596);
-    width: 500px;
+    width: 450px;
 }
 
 .hero-section-details h1{
     background-color: red;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 700;
     color: white;
     padding: 8px 12px;
     text-align: center;
+}
+
+.hero-section-details ul li{
+    font-size: 18px;
+    color: black;
+    font-weight: 800;
+}
+.hero-section-details ul li:nth-last-of-type(odd){
+    color: red;
+}
+
+.hero-section-details div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+    
+
+.hero-section-details div button{
+    padding: 8px 0;
+    border: none;
+    background-color: rgb(50, 49, 49);
+    color: white;
+}
+
+
+.about-hero-homes h1{
+    color: red;
+    font-size: 32px;
+    font-weight: 700;
+    word-spacing: 20px;
+    letter-spacing: 4px;
+}
+
+.container{
+    max-width: 1140px !important;
+}
+
+.about-hero-homes figure{
+    height: 400px;
+}
+
+.about-hero-homes p{
+    font-weight: 500;
+    line-height: 30px;
+    font-size: 17px;
+}
+
+.key-features{
+    background-color:#E3E3E3;
+}
+
+.key-features h2{
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.key-features  ul li i{
+    color: red;
+}
+
+.key-features  ul li{
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(47, 45, 45);
+    line-height: 45px;
 }
