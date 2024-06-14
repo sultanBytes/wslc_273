@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // console.log('1');
+
+        // setTimeout(()=>{console.log('2');}, 0);
+
+        // console.log('3');
+
+        // let a = 10;
+
+        // let b;
+
+        // setTimeout(()=>{
+        //     b = 12;
+        // },1);
+
+        // console.log(a+b);
+
+
+
+        // let a = 8;
+
+        // const delay = new Promise((resolve, reject)=>{
+        //     setTimeout(()=>{
+        //         b = 12;
+
+        //         resolve(b);
+        //     }, 2000);
+        // })
+
+        // .then((b)=>{
+        //     console.log(a + b);
+        // })
+
+
+
+        const abc = async()=>{
+            let a = 10;
+            let b;
+
+            await new Promise((resolve)=>{
+                setTimeout(()=>{
+                    b = 12;
+
+                    resolve(b)
+                },1000)
+            })
+
+
+            console.log(a + b);
+        };
+
+        abc();
+        
+    </script>
+</body>
+</html>
